@@ -1,6 +1,9 @@
 package lambda.conumer;
 
 import java.util.List;
+import java.util.function.DoublePredicate;
+import java.util.function.IntPredicate;
+import java.util.function.LongPredicate;
 import java.util.function.Predicate;
 
 public class PredictableEX {
@@ -31,5 +34,14 @@ public class PredictableEX {
                 System.out.println(instructor);
             }
         });
+        IntPredicate p5 = (i) -> i>100;
+        System.out.println(p5.test(100));
+
+        LongPredicate p6 = (i) -> i>100L;
+        System.out.println(p6.test(1111111111111111111L));
+
+        DoublePredicate p7 = (i) -> i<100.25;
+        DoublePredicate p8 = (i) -> i>100.10;
+        System.out.println(p7.and(p8).test(100.15));
     }
 }
