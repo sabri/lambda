@@ -1,5 +1,7 @@
 package lambda;
 
+import jdk.swing.interop.SwingInterOpUtils;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
@@ -11,6 +13,26 @@ public class SumofArray {
     public static int totlal = IntStream.rangeClosed(0,500).sum();
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                int sum = 0;
+                for (int i =0; i<10; i++){
+                    sum+=i;
+                }
+                System.out.println( "traditional way " +sum);
+            }
+        };
+        new Thread(runnable).start();
+        Runnable runnable1= () -> {
+            int sum = 0;
+            for (int i =0; i<10; i++){
+                sum+=i;
+            }
+            System.out.println("lambda way "+ sum);
+        };
+        new Thread(runnable1).start();
+
         Callable callable = () -> {
 
             int sum=0;
