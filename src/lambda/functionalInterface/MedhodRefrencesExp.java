@@ -1,4 +1,4 @@
-package lambda.conumer;
+package lambda.functionalInterface;
 
 import java.util.function.Function;
 import java.util.function.Predicate;

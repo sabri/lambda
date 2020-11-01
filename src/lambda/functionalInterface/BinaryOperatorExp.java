@@ -1,4 +1,4 @@
-package lambda.conumer;
+package lambda.functionalInterface;
 
 import java.util.Comparator;
 import java.util.function.BinaryOperator;

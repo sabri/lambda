@@ -1,4 +1,4 @@
-package lambda.conumer;
+package lambda.functionalInterface;
 
 import java.util.HashMap;
 import java.util.List;
