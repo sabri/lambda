@@ -16,6 +16,7 @@ public class ConsumerEx {
         };
         d.accept(5555);
 
+
         List<Instructor> instructor = Instructors.getAll();
         // looping throw all the instractors and printing value of instractors
         Consumer<Instructor> i = (s) -> System.out.println(s.getName());
